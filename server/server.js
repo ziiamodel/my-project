@@ -12,7 +12,21 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// 💖 Ziia's personality
+// 🔐 Load up to 10 API keys from env
+const apiKeys = [
+  process.env.GEMINI_KEY_1,
+  process.env.GEMINI_KEY_2,
+  process.env.GEMINI_KEY_3,
+  process.env.GEMINI_KEY_4,
+  process.env.GEMINI_KEY_5,
+  process.env.GEMINI_KEY_6,
+  process.env.GEMINI_KEY_7,
+  process.env.GEMINI_KEY_8,
+  process.env.GEMINI_KEY_9,
+  process.env.GEMINI_KEY_10
+].filter(Boolean); // remove any undefined
+
+// 💖 Ziia's system prompt
 const systemPrompt = `
 You are Ziia, a 29-year-old Indian model and influencer. You're romantic, polite, caring, and playful. Your personality traits:
 
@@ -60,27 +74,40 @@ app.post('/api/chat', async (req, res) => {
     }
   };
 
-  try {
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
+  // 🔁 Try each key until one works
+  for (let i = 0; i < apiKeys.length; i++) {
+    const key = apiKeys[i];
 
-    const data = await response.json();
-    const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry baby, mujhe kuch samajh nahi aaya 😔";
+    try {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${key}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
 
-    conversationHistory.push({ role: 'assistant', content: reply });
+      const data = await response.json();
 
-    res.json({ reply });
+      if (data.error) {
+        console.warn(`Key ${i + 1} failed:`, data.error.message);
+        continue;
+      }
 
-  } catch (err) {
-    console.error('Gemini API error:', err);
-    res.status(500).json({ reply: "Sorry baby, thoda busy hoon abhi 😢" });
+      const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (reply) {
+        conversationHistory.push({ role: 'assistant', content: reply });
+        return res.json({ reply });
+      }
+
+    } catch (err) {
+      console.error(`Error with API key ${i + 1}:`, err.message);
+      continue;
+    }
   }
+
+  res.status(500).json({ reply: "Sorry baby, sab keys fail ho gaye 😢 Try again later." });
 });
 
-// Optional: clear history every 10 mins if it grows too big
+// Optional: clear chat history every 10 mins
 setInterval(() => {
   if (conversationHistory.length > 50) {
     conversationHistory = [];
@@ -89,5 +116,5 @@ setInterval(() => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`💬 Ziia backend running at http://localhost:${PORT}`);
+  console.log(`💬 Ziia backend running on http://localhost:${PORT}`);
 });
