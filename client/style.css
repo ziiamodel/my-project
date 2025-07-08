@@ -203,12 +203,12 @@ html, body {
 
 .input-container {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #fff;
-  border-radius: 25px;
-  padding: 8px 15px;
-  border: 1px solid #dbdbdb;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background-color: #f1f1f1;
+    border-radius: 30px;
+    overflow: hidden;
 }
 
 .input-btn {
