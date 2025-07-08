@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Chat - AI Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Chat Header -->
+        <div class="chat-header">
+            <div class="profile-info">
+                <div class="profile-avatar">
+                    <img src="https://ziiax.fwh.is/icon-192.png" alt="Profile">
+                </div>
+                <div class="profile-details">
+                    <h3>Ziia ✨</h3>
+                    <span class="online-status" id="onlineStatus">Online</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <i class="fas fa-phone"></i>
+                <i class="fas fa-video"></i>
+                <i class="fas fa-info-circle"></i>
+            </div>
+        </div>
+
+        <!-- Chat Messages -->
+        <div class="chat-messages" id="chatMessages">
+            <div class="welcome-message">
+                <div class="message ai-message">
+                    <div class="message-avatar">
+                        <img src="https://ziiax.fwh.is/icon-192.png" alt="chat">
+                    </div>
+                    <div class="message-bubble">
+                        <p>Hey there! ✨ I'm ziia, so excited to chat with you! Kya haal hai? 💕</p>
+                        <span class="message-time">Just now</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typing Indicator -->
+        <div class="typing-indicator" id="typingIndicator" style="display: none;">
+            <div class="message ai-message">
+                <div class="message-avatar">
+                    <img src="https://ziiax.fwh.is/icon-192.png" alt="chat">
+                </div>
+                <div class="message-bubble typing-bubble">
+                    <div class="typing-dots">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input">
+            <div class="input-container">
+                <button class="input-btn" id="cameraBtn">
+                    <i class="fas fa-camera"></i>
+                </button>
+                <input type="text" id="messageInput" placeholder="Message..." autocomplete="off">
+                <button class="input-btn" id="micBtn">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <button class="send-btn" id="sendBtn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- API Key Notice -->
+    <div class="api-notice" id="apiNotice">
+        <div class="notice-content">
+            <i class="fas fa-key"></i>
+            <p>kuch lafda ho gya hai....</p>
+            <small>insta pe DM karo<a href="https://instagram.com/ziia_model" target="_blank">Karo DM</a></small>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
