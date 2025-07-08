@@ -76,7 +76,7 @@ class InstagramChat {
 
         const currentTime = 'now';
         const avatar = sender === 'ai'
-            ? `<div class="message-avatar"><img src="data:image/svg+xml;base64,...svg_code..." alt="AI"></div>`
+            ? `<div class="message-avatar"><img src="https://ziiax.fwh.is/icon-192.png" alt="ziia"></div>`
             : '';
 
         div.innerHTML = `
@@ -97,7 +97,7 @@ class InstagramChat {
 
         const currentTime = 'now';
         const avatar = sender === 'ai'
-            ? `<div class="message-avatar"><img src="data:image/svg+xml;base64,...svg_code..." alt="AI"></div>`
+            ? `<div class="message-avatar"><img src="https://ziiax.fwh.is/icon-192.png" alt="ziia"></div>`
             : '';
 
         div.innerHTML = `
