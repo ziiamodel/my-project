@@ -1,6 +1,7 @@
 {
   "name": "ziia-backend",
   "version": "1.0.0",
+  "description": "AI girlfriend backend with Gemini API key rotation",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
