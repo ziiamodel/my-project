@@ -87,11 +87,12 @@
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
     import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
-    import { getFirestore, collection, doc, addDoc, getDocs, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+    import { getDatabase, ref, push, onChildAdded } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyD6FTr1VoPnurH5AqgJ0XqHIGf5m__ojIw",
       authDomain: "ziiameetvercel.firebaseapp.com",
+      databaseURL: "https://ziiameetvercel-default-rtdb.firebaseio.com",
       projectId: "ziiameetvercel",
       storageBucket: "ziiameetvercel.firebasestorage.app",
       messagingSenderId: "357260694368",
@@ -102,11 +103,12 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
-    const db = getFirestore(app);
+    const db = getDatabase(app);
 
     const loginPopup = document.getElementById('loginPopup');
     const chatContainer = document.querySelector('.chat-container');
     const loginBtn = document.getElementById('loginBtn');
+    const chatMessages = document.getElementById('chatMessages');
 
     let currentUser = null;
 
@@ -133,26 +135,26 @@
         .catch(err => alert("Login failed: " + err.message));
     });
 
-    async function loadChatHistory(uid) {
-      const q = query(collection(doc(collection(db, 'chatLogs'), uid), 'messages'), orderBy('timestamp'));
-      const snapshot = await getDocs(q);
-      snapshot.forEach(doc => {
-        const data = doc.data();
+    function loadChatHistory(uid) {
+      const chatRef = ref(db, 'chatLogs/' + uid);
+      onChildAdded(chatRef, snapshot => {
+        const data = snapshot.val();
         const sender = data.sender === 'user' ? 'user' : 'ai';
         const chat = new InstagramChat();
         chat.addMessage(data.message, sender);
       });
     }
 
-    async function saveMessageToFirestore(uid, message, sender) {
-      await addDoc(collection(doc(collection(db, 'chatLogs'), uid), 'messages'), {
+    async function saveMessageToRealtimeDB(uid, message, sender) {
+      const chatRef = ref(db, 'chatLogs/' + uid);
+      await push(chatRef, {
         sender,
         message,
-        timestamp: serverTimestamp()
+        timestamp: Date.now()
       });
     }
 
-    window.saveMessageToFirestore = saveMessageToFirestore;
+    window.saveMessageToFirestore = saveMessageToRealtimeDB;
     window.getCurrentUserId = () => currentUser?.uid;
   </script>
 
