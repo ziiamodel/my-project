@@ -3,199 +3,159 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ziia - AI Chat with Google Login</title>
+  <title>Instagram Chat - AI Companion</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      background: #f8f8f8;
-    }
-    .chat-container {
-      max-width: 500px;
-      margin: 50px auto;
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      display: none;
-    }
-    .chat-messages {
-      max-height: 400px;
-      overflow-y: auto;
-      padding: 20px;
-    }
-    .message {
-      margin: 10px 0;
-    }
-    .user {
-      text-align: right;
-    }
-    .ai {
-      text-align: left;
-    }
-    .chat-input {
-      display: flex;
-      padding: 10px;
-      border-top: 1px solid #eee;
-    }
-    .chat-input input {
-      flex: 1;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .chat-input button {
-      margin-left: 10px;
-      padding: 10px 20px;
-      background: #ff4081;
-      border: none;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .login-popup {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-    }
-    .login-box {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      text-align: center;
-    }
-    .login-google-btn {
-      background: #4285F4;
-      color: white;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .login-google-btn i {
-      margin-right: 8px;
-    }
-  </style>
 </head>
 <body>
-
-<!-- Login Popup -->
-<div id="loginPopup" class="login-popup">
-  <div class="login-box">
-    <h2>Welcome to Ziia 💖</h2>
-    <p>Login to chat with me</p>
-    <button id="loginBtn" class="login-google-btn">
-      <i class="fab fa-google"></i> Continue with Google
-    </button>
+  <!-- Login Popup -->
+  <div id="loginPopup" class="login-popup" style="display: none;">
+    <div class="login-box">
+      <h2>Welcome to Ziia 💖</h2>
+      <p>Please log in to start chatting</p>
+      <button id="loginBtn" class="login-google-btn">
+        <i class="fab fa-google"></i> Continue with Google
+      </button>
+    </div>
   </div>
-</div>
 
-<!-- Chat Section -->
-<div class="chat-container">
-  <div class="chat-messages" id="chatMessages"></div>
-  <div class="chat-input">
-    <input type="text" id="messageInput" placeholder="Type a message...">
-    <button id="sendBtn">Send</button>
+  <div class="chat-container">
+    <!-- Chat Header -->
+    <div class="chat-header">
+      <div class="profile-info">
+        <div class="profile-avatar">
+          <img src="https://ziiax.fwh.is/icon-192.png" alt="Profile">
+        </div>
+        <div class="profile-details">
+          <h3>Ziia ✨</h3>
+          <span class="online-status" id="onlineStatus">Online</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <i class="fas fa-phone"></i>
+        <i class="fas fa-video"></i>
+        <i class="fas fa-info-circle"></i>
+      </div>
+    </div>
+
+    <!-- Chat Messages -->
+    <div class="chat-messages" id="chatMessages">
+      <div class="welcome-message">
+        <div class="message ai-message">
+          <div class="message-avatar">
+            <img src="https://ziiax.fwh.is/icon-192.png" alt="chat">
+          </div>
+          <div class="message-bubble">
+            <p>Hey there! ✨ I'm ziia, so excited to chat with you! Kya haal hai? 💕</p>
+            <span class="message-time">Just now</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Typing Indicator -->
+    <div class="typing-indicator" id="typingIndicator" style="display: none;">
+      <div class="message ai-message">
+        <div class="message-avatar">
+          <img src="https://ziiax.fwh.is/icon-192.png" alt="chat">
+        </div>
+        <div class="message-bubble typing-bubble">
+          <div class="typing-dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Input -->
+    <div class="chat-input">
+      <div class="input-container">
+        <button class="input-btn" id="cameraBtn">
+          <i class="fas fa-camera"></i>
+        </button>
+        <input type="text" id="messageInput" placeholder="Message..." autocomplete="off">
+        <button class="input-btn" id="micBtn">
+          <i class="fas fa-microphone"></i>
+        </button>
+        <button class="send-btn" id="sendBtn">send</button>
+      </div>
+    </div>
   </div>
-</div>
 
-<!-- Firebase SDKs -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
-  import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
-  import { getFirestore, collection, doc, addDoc, getDocs, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+    import { getFirestore, collection, doc, addDoc, getDocs, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyD6FTr1VoPnurH5AqgJ0XqHIGf5m__ojIw",
-    authDomain: "ziiameetvercel.firebaseapp.com",
-    projectId: "ziiameetvercel",
-    storageBucket: "ziiameetvercel.firebasestorage.app",
-    messagingSenderId: "357260694368",
-    appId: "1:357260694368:web:661acd55ea140200fd8405",
-    measurementId: "G-8YLD8K47M1"
-  };
+    const firebaseConfig = {
+      apiKey: "AIzaSyD6FTr1VoPnurH5AqgJ0XqHIGf5m__ojIw",
+      authDomain: "ziiameetvercel.firebaseapp.com",
+      projectId: "ziiameetvercel",
+      storageBucket: "ziiameetvercel.firebasestorage.app",
+      messagingSenderId: "357260694368",
+      appId: "1:357260694368:web:661acd55ea140200fd8405",
+      measurementId: "G-8YLD8K47M1"
+    };
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth();
-  const provider = new GoogleAuthProvider();
-  const db = getFirestore(app);
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+    const db = getFirestore(app);
 
-  const loginPopup = document.getElementById('loginPopup');
-  const chatContainer = document.querySelector('.chat-container');
-  const loginBtn = document.getElementById('loginBtn');
-  const chatMessages = document.getElementById('chatMessages');
-  const messageInput = document.getElementById('messageInput');
-  const sendBtn = document.getElementById('sendBtn');
+    const loginPopup = document.getElementById('loginPopup');
+    const chatContainer = document.querySelector('.chat-container');
+    const loginBtn = document.getElementById('loginBtn');
 
-  let currentUser = null;
+    let currentUser = null;
 
-  onAuthStateChanged(auth, user => {
-    if (user) {
-      currentUser = user;
-      loginPopup.style.display = 'none';
-      chatContainer.style.display = 'block';
-      loadChatHistory(user.uid);
-    } else {
-      chatContainer.style.display = 'none';
-      loginPopup.style.display = 'flex';
-    }
-  });
-
-  loginBtn.addEventListener('click', () => {
-    signInWithPopup(auth, provider)
-      .then(result => {
-        currentUser = result.user;
+    onAuthStateChanged(auth, user => {
+      if (user) {
+        currentUser = user;
         loginPopup.style.display = 'none';
-        chatContainer.style.display = 'block';
-        loadChatHistory(currentUser.uid);
-      })
-      .catch(err => alert("Login failed: " + err.message));
-  });
-
-  sendBtn.addEventListener('click', async () => {
-    const msg = messageInput.value.trim();
-    if (!msg || !currentUser) return;
-
-    addMessage(msg, 'user');
-    messageInput.value = '';
-
-    await saveMessage(currentUser.uid, msg, 'user');
-
-    const reply = "Aww baby, I missed you too 😘"; // Mock AI reply for now
-    addMessage(reply, 'ai');
-    await saveMessage(currentUser.uid, reply, 'ziia');
-  });
-
-  function addMessage(text, sender) {
-    const div = document.createElement('div');
-    div.className = `message ${sender}`;
-    div.textContent = text;
-    chatMessages.appendChild(div);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }
-
-  async function saveMessage(uid, message, sender) {
-    await addDoc(collection(doc(collection(db, 'chatLogs'), uid), 'messages'), {
-      sender,
-      message,
-      timestamp: serverTimestamp()
+        chatContainer.style.display = 'flex';
+        loadChatHistory(user.uid);
+      } else {
+        chatContainer.style.display = 'none';
+        loginPopup.style.display = 'flex';
+      }
     });
-  }
 
-  async function loadChatHistory(uid) {
-    const q = query(collection(doc(collection(db, 'chatLogs'), uid), 'messages'), orderBy('timestamp'));
-    const snapshot = await getDocs(q);
-    snapshot.forEach(doc => {
-      const data = doc.data();
-      addMessage(data.message, data.sender === 'user' ? 'user' : 'ai');
+    loginBtn.addEventListener('click', () => {
+      signInWithPopup(auth, provider)
+        .then(result => {
+          currentUser = result.user;
+          loginPopup.style.display = 'none';
+          chatContainer.style.display = 'flex';
+          loadChatHistory(currentUser.uid);
+        })
+        .catch(err => alert("Login failed: " + err.message));
     });
-  }
-</script>
+
+    async function loadChatHistory(uid) {
+      const q = query(collection(doc(collection(db, 'chatLogs'), uid), 'messages'), orderBy('timestamp'));
+      const snapshot = await getDocs(q);
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        const sender = data.sender === 'user' ? 'user' : 'ai';
+        const chat = new InstagramChat();
+        chat.addMessage(data.message, sender);
+      });
+    }
+
+    async function saveMessageToFirestore(uid, message, sender) {
+      await addDoc(collection(doc(collection(db, 'chatLogs'), uid), 'messages'), {
+        sender,
+        message,
+        timestamp: serverTimestamp()
+      });
+    }
+
+    window.saveMessageToFirestore = saveMessageToFirestore;
+    window.getCurrentUserId = () => currentUser?.uid;
+  </script>
+
+  <script src="script.js"></script>
 </body>
 </html>
