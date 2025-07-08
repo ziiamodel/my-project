@@ -385,17 +385,52 @@ html, body {
 }
 
 
-.send-btn {
+  .send-btn {
     background-color: #ff4081;
     color: white;
     border: none;
-    padding: 8px 30px;
+    padding: 8px 16px;
     border-radius: 20px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 16px;
 }
+
 
 .send-btn:hover {
     background-color: #e73370;
 }
+
+
+
+
+.input-container input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 8px 12px;
+    background: transparent;
+    font-size: 16px;
+}
+
+
+@media (max-width: 500px) {
+  .input-container {
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .send-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .input-container input {
+    font-size: 14px;
+  }
+}
+
