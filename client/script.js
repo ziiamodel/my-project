@@ -8,7 +8,7 @@ class InstagramChat {
         this.apiNotice = document.getElementById('apiNotice');
 
         this.isTyping = false;
-        this.backendURL = 'https://your-backend.onrender.com/api/chat'; // change this to your real URL
+        this.backendURL = 'https://ziiaapi.onrender.com/api/chat'; // change this to your real URL
 
         this.setupEventListeners();
     }
