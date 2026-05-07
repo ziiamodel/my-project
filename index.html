@@ -1,215 +1,867 @@
 <!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Aisha</title>
 
-<html class="light" lang="en"><head>
-      <script src="https://quge5.com/88/tag.min.js" data-zone="237022" async data-cfasync="false"></script>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "error-container": "#ffdad6",
-                    "outline": "#7e7576",
-                    "surface-variant": "#e2e2e2",
-                    "on-primary-fixed-variant": "#474747",
-                    "surface-container-low": "#f3f3f3",
-                    "on-primary-container": "#848484",
-                    "on-tertiary-fixed-variant": "#474747",
-                    "surface": "#f9f9f9",
-                    "on-surface-variant": "#4c4546",
-                    "tertiary-container": "#1b1b1b",
-                    "background": "#f9f9f9",
-                    "on-primary": "#ffffff",
-                    "secondary-fixed": "#e3e2e2",
-                    "secondary": "#5e5e5e",
-                    "tertiary": "#000000",
-                    "on-secondary-container": "#646464",
-                    "surface-bright": "#f9f9f9",
-                    "secondary-container": "#e3e2e2",
-                    "on-error": "#ffffff",
-                    "on-tertiary-container": "#848484",
-                    "on-primary-fixed": "#1b1b1b",
-                    "surface-container-lowest": "#ffffff",
-                    "primary-container": "#1b1b1b",
-                    "on-secondary-fixed-variant": "#464747",
-                    "surface-container": "#eeeeee",
-                    "surface-container-highest": "#e2e2e2",
-                    "on-secondary": "#ffffff",
-                    "primary": "#000000",
-                    "outline-variant": "#cfc4c5",
-                    "inverse-primary": "#c6c6c6",
-                    "tertiary-fixed": "#e2e2e2",
-                    "error": "#ba1a1a",
-                    "on-tertiary-fixed": "#1b1b1b",
-                    "on-surface": "#1b1b1b",
-                    "surface-container-high": "#e8e8e8",
-                    "surface-dim": "#dadada",
-                    "tertiary-fixed-dim": "#c6c6c6",
-                    "inverse-on-surface": "#f1f1f1",
-                    "on-secondary-fixed": "#1b1c1c",
-                    "on-tertiary": "#ffffff",
-                    "on-error-container": "#93000a",
-                    "secondary-fixed-dim": "#c7c6c6",
-                    "inverse-surface": "#303030",
-                    "on-background": "#1b1b1b",
-                    "primary-fixed-dim": "#c6c6c6",
-                    "surface-tint": "#5e5e5e",
-                    "primary-fixed": "#e2e2e2"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
-            },
-            "spacing": {
-                    "edge-margin": "12px",
-                    "xl": "24px",
-                    "lg": "16px",
-                    "unit": "4px",
-                    "md": "12px",
-                    "xs": "4px",
-                    "grid-gutter": "2px",
-                    "sm": "8px"
-            },
-            "fontFamily": {
-                    "headline-sm": ["Inter"],
-                    "body-sm": ["Inter"],
-                    "label-caps": ["Inter"],
-                    "label-bold": ["Inter"],
-                    "display-bold": ["Inter"],
-                    "body-md": ["Inter"]
-            },
-            "fontSize": {
-                    "headline-sm": ["16px", {"lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                    "body-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400"}],
-                    "label-caps": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700"}],
-                    "label-bold": ["14px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "600"}],
-                    "display-bold": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "body-md": ["14px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400"}]
-            }
-          },
-        },
-      }
-    </script>
+<!-- PWA -->
+<meta name="theme-color" content="#e11d48">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Aisha">
+<meta name="description" content="Exclusive photo gallery by Aisha">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
 <style>
-        body { font-family: 'Inter', sans-serif; }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            display: inline-block;
-            line-height: 1;
-            text-transform: none;
-            letter-spacing: normal;
-            word-wrap: normal;
-            white-space: nowrap;
-            direction: ltr;
-        }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
+/* ─────────────────────────────────────────────
+   CONFIGURATION — set your InfinityFree URL
+──────────────────────────────────────────────*/
+/* Edit the API_URL in the <script> block below */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow: hidden; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Inter', sans-serif; }
+
+/* ── Theme vars ── */
+:root {
+  --surface:#ffffff; --surface-low:#f5f5f5; --surface-var:#ebebeb;
+  --surface-cont:#f0f0f0; --surface-high:#e8e8e8;
+  --on-surface:#111111; --on-surface-var:#555555;
+  --outline-var:#e0e0e0; --outline:#aaaaaa;
+  --primary:#e11d48; --on-primary:#ffffff;
+  --grad: linear-gradient(135deg,#e11d48,#f97316);
+}
+.dark {
+  --surface:#0d0d12; --surface-low:#13131a; --surface-var:#1e1e28;
+  --surface-cont:#181820; --surface-high:#22222e;
+  --on-surface:#f0f0f0; --on-surface-var:#888888;
+  --outline-var:#252530; --outline:#444444;
+  --primary:#fb7185; --on-primary:#0d0d12;
+  --grad: linear-gradient(135deg,#fb7185,#fb923c);
+}
+body { background: var(--surface); color: var(--on-surface); }
+
+/* ── Shell ── */
+#shell { position:fixed;inset:0;display:flex;flex-direction:column; }
+#topBar {
+  flex-shrink:0;height:56px;background:var(--surface);
+  border-bottom:1px solid var(--outline-var);
+  display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:50;
+}
+#appBody { flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;background:var(--surface); }
+#bottomNav {
+  flex-shrink:0;height:60px;background:var(--surface);
+  border-top:1px solid var(--outline-var);
+  display:flex;align-items:center;justify-content:space-around;
+  padding:0 8px;padding-bottom:env(safe-area-inset-bottom,0);z-index:50;
+}
+
+/* ── Logo ── */
+.logo {
+  font-family:'Grand Hotel',cursive;font-size:26px;font-weight:400;
+  background:var(--grad);-webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;background-clip:text;line-height:1;
+}
+
+/* ── Login screen ── */
+#loginScreen {
+  position:fixed;inset:0;z-index:300;
+  background:var(--surface);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:24px;
+}
+.login-box {
+  width:100%;max-width:420px;
+  background:var(--surface);
+  border:1px solid var(--outline-var);border-radius:24px;
+  padding:32px 24px;
+  box-shadow:0 8px 40px rgba(0,0,0,.08);
+  position:relative;overflow:hidden;
+}
+.login-box::before {
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--grad);
+}
+.login-logo { text-align:center;margin-bottom:6px; }
+.login-logo span { font-family:'Grand Hotel',cursive;font-size:40px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+.login-sub { text-align:center;font-size:13px;color:var(--on-surface-var);margin-bottom:28px; }
+.auth-tabs {
+  display:flex;gap:4px;margin-bottom:22px;
+  background:var(--surface-cont);border-radius:14px;padding:4px;
+}
+.a-tab {
+  flex:1;text-align:center;padding:9px;border-radius:10px;
+  font-size:13px;font-weight:600;cursor:pointer;
+  color:var(--on-surface-var);transition:all .2s;
+  background:none;border:none;font-family:'Inter',sans-serif;
+}
+.a-tab.active { background:var(--surface);color:var(--on-surface);box-shadow:0 2px 8px rgba(0,0,0,.1); }
+.fg { margin-bottom:14px; }
+.fg label { display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--on-surface-var);margin-bottom:7px; }
+.fg input {
+  width:100%;background:var(--surface-cont);
+  border:1.5px solid var(--outline-var);border-radius:12px;
+  padding:12px 14px;font-size:14px;font-family:'Inter',sans-serif;
+  color:var(--on-surface);outline:none;transition:border-color .2s,box-shadow .2s;
+}
+.fg input:focus { border-color:var(--primary);box-shadow:0 0 0 3px rgba(225,29,72,.12); }
+.fg input::placeholder { color:var(--on-surface-var); }
+.btn-fill {
+  width:100%;border:none;border-radius:12px;padding:14px;
+  font-size:15px;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;
+  margin-top:4px;transition:opacity .15s,transform .1s;
+  background:var(--grad);color:#fff;
+}
+.btn-fill:active { opacity:.85;transform:scale(.98); }
+.btn-fill:disabled { opacity:.6;cursor:not-allowed; }
+.auth-err {
+  background:rgba(186,26,26,.08);border:1px solid rgba(186,26,26,.2);
+  color:#ba1a1a;border-radius:10px;padding:10px 14px;
+  font-size:13px;margin-bottom:14px;display:none;
+}
+.dark .auth-err { color:#ff7070;background:rgba(220,50,50,.1);border-color:rgba(220,50,50,.2); }
+
+/* ── API config notice ── */
+.config-notice {
+  background:rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.25);
+  color:#92400e;border-radius:10px;padding:10px 14px;font-size:12px;
+  margin-bottom:16px;line-height:1.5;
+}
+.dark .config-notice { color:#fbbf24;background:rgba(234,179,8,.08);border-color:rgba(234,179,8,.2); }
+.config-notice code { background:rgba(0,0,0,.08);padding:1px 5px;border-radius:4px;font-size:11px; }
+
+/* ── Loading spinner ── */
+.spinner-wrap { display:flex;align-items:center;justify-content:center;padding:80px 20px;flex-direction:column;gap:16px; }
+.spinner {
+  width:36px;height:36px;border-radius:50%;
+  border:3px solid var(--outline-var);
+  border-top-color:var(--primary);
+  animation:spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinner-label { font-size:14px;color:var(--on-surface-var); }
+
+/* ── Tab panes ── */
+.tab-pane { display:none;animation:fadeUp .2s ease both; }
+.tab-pane.active { display:block; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+
+/* ── Post card ── */
+.post-card { background:var(--surface);border-bottom:1px solid var(--outline-var);padding-bottom:4px; }
+.post-hdr { display:flex;align-items:center;justify-content:space-between;padding:10px 12px 8px; }
+.post-creator { display:flex;align-items:center;gap:10px; }
+.creator-ring { width:38px;height:38px;border-radius:50%;flex-shrink:0;background:var(--grad);padding:2px; }
+.creator-av { width:100%;height:100%;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--primary); }
+.creator-name { font-size:14px;font-weight:700;color:var(--on-surface);display:block;line-height:1.2; }
+.creator-time { font-size:11px;color:var(--on-surface-var);display:block; }
+
+/* ── Image ── */
+.img-wrap { position:relative;aspect-ratio:1/1;background:var(--surface-cont);overflow:hidden;cursor:pointer; }
+.img-wrap img { width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none; }
+.img-wrap::after { content:'';position:absolute;inset:0;z-index:1;pointer-events:none; }
+
+/* ── Post body ── */
+.post-body { padding:8px 12px 10px; }
+.post-actions { display:flex;align-items:center;gap:2px;margin-bottom:6px; }
+.like-count { font-size:14px;font-weight:700;color:var(--on-surface);min-width:8px;margin-right:2px; }
+.like-line { font-size:13px;color:var(--on-surface);margin-bottom:3px; }
+.like-line b { font-weight:700; }
+.caption { font-size:14px;color:var(--on-surface);line-height:1.45;margin-bottom:2px; }
+.caption b { font-weight:700;margin-right:5px; }
+
+/* ── Icon buttons ── */
+.icon-ghost {
+  background:none;border:none;cursor:pointer;padding:6px;border-radius:50%;
+  transition:background .15s,transform .1s;
+  display:flex;align-items:center;justify-content:center;pointer-events:auto;
+}
+.icon-ghost:active { transform:scale(.8);background:var(--surface-var); }
+.muted-icon { color:var(--on-surface-var); }
+.icon-ghost.icon-active .like-icon { color:#e11d48; }
+.dark .icon-ghost.icon-active .like-icon { color:#fb7185; }
+.icon-ghost.icon-active .save-icon { color:var(--primary); }
+.material-symbols-outlined {
+  font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;font-size:24px;
+  line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;
+  white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;
+  font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+}
+
+/* ── Bottom nav ── */
+.nav-btn {
+  background:none;border:none;cursor:pointer;padding:8px 16px;border-radius:24px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--on-surface-var);transition:color .2s,background .2s;pointer-events:auto;
+}
+.nav-btn.active { color:var(--primary);background:rgba(225,29,72,.1); }
+.nav-btn.active .material-symbols-outlined { font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24; }
+.nav-avatar { width:26px;height:26px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--surface-cont);font-size:11px;font-weight:700;color:var(--on-surface);transition:border .2s; }
+.nav-btn.active .nav-avatar { border:2px solid var(--primary); }
+
+/* ── Empty ── */
+.empty-feed { text-align:center;padding:80px 24px 40px;color:var(--on-surface-var); }
+.empty-feed .material-symbols-outlined { font-size:56px;display:block;margin-bottom:16px;opacity:.25; }
+.empty-feed p { font-size:14px;line-height:1.7;opacity:.7; }
+
+/* ── Search ── */
+.search-wrap { padding:12px; }
+.search-input-wrap { position:relative;margin-bottom:14px; }
+.search-input-wrap .material-symbols-outlined { position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:20px;color:var(--on-surface-var);pointer-events:none; }
+.search-input-wrap input { width:100%;background:var(--surface-cont);border:1.5px solid var(--outline-var);border-radius:14px;padding:11px 16px 11px 44px;font-size:14px;font-family:'Inter',sans-serif;color:var(--on-surface);outline:none;transition:border-color .2s,box-shadow .2s; }
+.search-input-wrap input::placeholder { color:var(--on-surface-var); }
+.search-input-wrap input:focus { border-color:var(--primary);box-shadow:0 0 0 3px rgba(225,29,72,.1); }
+.search-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:2px; }
+.s-thumb { aspect-ratio:1;overflow:hidden;cursor:pointer;position:relative;background:var(--surface-cont); }
+.s-thumb img { width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s;pointer-events:none;user-select:none; }
+.s-thumb:active { opacity:.85; }
+.search-empty { text-align:center;padding:48px 20px;color:var(--on-surface-var);font-size:14px; }
+
+/* ── Lightbox ── */
+.lightbox { position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.97);display:none;flex-direction:column;align-items:center;justify-content:center; }
+.lightbox.open { display:flex; }
+.lb-close { position:absolute;top:16px;right:16px;background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.18);border-radius:50%;width:44px;height:44px;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;pointer-events:auto; }
+.lb-close:active { background:rgba(255,255,255,.25); }
+.lb-img { max-width:94vw;max-height:78vh;object-fit:contain;transform-origin:center;transition:transform .1s;border-radius:6px;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;pointer-events:none; }
+.lb-img-wrap { position:relative;display:flex;align-items:center;justify-content:center; }
+.lb-img-wrap::after { content:'';position:absolute;inset:0;z-index:1; }
+.lb-cap { position:absolute;bottom:80px;left:0;right:0;text-align:center;padding:0 28px;color:rgba(255,255,255,.7);font-size:13px; }
+.lb-ctrls { position:absolute;bottom:20px;display:flex;gap:10px; }
+.lb-btn { background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.18);border-radius:50%;width:46px;height:46px;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;pointer-events:auto; }
+.lb-btn:active { background:rgba(255,255,255,.25); }
+
+/* ── Profile ── */
+.profile-hero { padding:28px 16px 20px;text-align:center;border-bottom:1px solid var(--outline-var); }
+.profile-av-ring { width:88px;height:88px;border-radius:50%;background:var(--grad);padding:2.5px;margin:0 auto 14px; }
+.profile-av { width:100%;height:100%;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:700;color:var(--primary); }
+.profile-name { font-size:18px;font-weight:700;color:var(--on-surface);margin-bottom:3px; }
+.profile-email { font-size:13px;color:var(--on-surface-var); }
+.profile-stats { display:flex;justify-content:center;gap:28px;margin-top:16px; }
+.pstat { text-align:center; }
+.pstat-val { font-size:20px;font-weight:700;color:var(--on-surface); }
+.pstat-lbl { font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--on-surface-var); }
+.profile-row { display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid var(--outline-var);cursor:pointer;transition:background .15s; }
+.profile-row:active { background:var(--surface-cont); }
+.profile-row-left { display:flex;align-items:center;gap:14px; }
+.profile-row-left .material-symbols-outlined { font-size:22px;color:var(--on-surface-var); }
+.profile-row-label { font-size:15px;font-weight:500;color:var(--on-surface); }
+.profile-row-sub { font-size:12px;color:var(--on-surface-var);margin-top:2px; }
+.toggle-track { width:46px;height:26px;border-radius:13px;background:var(--outline-var);position:relative;transition:background .25s;cursor:pointer;flex-shrink:0; }
+.toggle-thumb { position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .25s;box-shadow:0 1px 4px rgba(0,0,0,.2); }
+.dark .toggle-track { background:var(--primary); }
+.dark .toggle-thumb { transform:translateX(20px); }
+.profile-tabs { display:flex;border-bottom:1px solid var(--outline-var); }
+.profile-tab { flex:1;padding:13px;text-align:center;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--on-surface-var);cursor:pointer;border-bottom:2.5px solid transparent;transition:all .2s; }
+.profile-tab.active { color:var(--primary);border-bottom-color:var(--primary); }
+.profile-tab-pane { display:none; }
+.profile-tab-pane.active { display:block; }
+.profile-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:2px;padding:2px; }
+.pf-thumb { aspect-ratio:1;overflow:hidden;cursor:pointer;position:relative;background:var(--surface-cont); }
+.pf-thumb img { width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;user-select:none; }
+.pf-thumb:active { opacity:.85; }
+
+/* ── Sheet ── */
+.sheet-backdrop { position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);display:none;align-items:flex-end;justify-content:center; }
+.sheet-backdrop.open { display:flex; }
+.sheet { width:100%;max-width:480px;background:var(--surface);border-radius:24px 24px 0 0;padding:20px 20px max(40px,env(safe-area-inset-bottom,20px));animation:su .3s cubic-bezier(.32,1.3,.55,1);max-height:90vh;overflow-y:auto; }
+@keyframes su { from{transform:translateY(100%)} to{transform:translateY(0)} }
+.sheet-handle { width:36px;height:4px;border-radius:2px;background:var(--outline-var);margin:0 auto 20px; }
+.chpw-err { background:rgba(186,26,26,.08);border:1px solid rgba(186,26,26,.2);color:#ba1a1a;border-radius:10px;padding:10px 14px;font-size:13px;margin-bottom:14px;display:none; }
+.chpw-ok  { background:rgba(0,150,80,.08);border:1px solid rgba(0,150,80,.25);color:#008050;border-radius:10px;padding:10px 14px;font-size:13px;margin-bottom:14px;display:none; }
+.dark .chpw-ok { color:#00c875; }
+.dark .chpw-err { color:#ff7070;background:rgba(220,50,50,.1);border-color:rgba(220,50,50,.2); }
+
+/* ── Toast ── */
+.toast { position:fixed;top:68px;left:50%;transform:translateX(-50%) translateY(-16px);background:var(--surface-high);border:1px solid var(--outline-var);color:var(--on-surface);padding:10px 18px 10px 14px;border-radius:99px;font-size:13px;font-weight:500;opacity:0;transition:all .3s;z-index:999;white-space:nowrap;box-shadow:0 4px 24px rgba(0,0,0,.15);display:flex;align-items:center;gap:8px;pointer-events:none; }
+.dark .toast { background:#1e1e28;border-color:#2a2a38; }
+.toast.show { opacity:1;transform:translateX(-50%) translateY(0); }
+
+img { -webkit-user-drag:none;user-select:none;pointer-events:none; }
+button,.icon-ghost,.nav-btn,.lb-btn,.lb-close { pointer-events:auto; }
+</style>
+</head>
+<body>
+
+<!-- ── LOGIN SCREEN ─────────────────────────────────────── -->
+<div id="loginScreen">
+  <div class="login-box">
+    <div class="login-logo"><span>Aisha</span></div>
+    <p class="login-sub">Sign in to view exclusive content</p>
+
+    <div class="config-notice" id="configNotice" style="display:none">
+      ⚙️ <strong>Setup needed:</strong> Open this file and set <code>API_URL</code> to your InfinityFree URL, e.g.<br>
+      <code>https://yoursite.infinityfreeapp.com/api.php</code>
+    </div>
+
+    <div class="auth-err" id="loginErr"></div>
+
+    <div class="auth-tabs">
+      <button class="a-tab active" id="atab-in" onclick="swTab('in')">Sign in</button>
+      <button class="a-tab" id="atab-up" onclick="swTab('up')">Sign up</button>
+    </div>
+
+    <div id="formIn">
+      <div class="fg"><label>Email</label><input type="email" id="siEmail" placeholder="you@example.com" autocomplete="email"></div>
+      <div class="fg"><label>Password</label><input type="password" id="siPass" placeholder="••••••••" autocomplete="current-password"></div>
+      <button class="btn-fill" id="signinBtn" onclick="doSignIn()">Sign in</button>
+    </div>
+    <div id="formUp" style="display:none">
+      <div class="fg"><label>Username</label><input type="text" id="suUser" placeholder="yourname" autocomplete="username"></div>
+      <div class="fg"><label>Email</label><input type="email" id="suEmail" placeholder="you@example.com" autocomplete="email"></div>
+      <div class="fg"><label>Password</label><input type="password" id="suPass" placeholder="Min 6 characters" autocomplete="new-password"></div>
+      <button class="btn-fill" id="signupBtn" onclick="doSignUp()">Create account</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── MAIN APP ─────────────────────────────────────────── -->
+<div id="shell" style="display:none">
+
+  <header id="topBar">
+    <div class="logo">Aisha</div>
+    <div style="display:flex;align-items:center;gap:4px">
+      <button class="icon-ghost" onclick="switchTab('search')" aria-label="Search">
+        <span class="material-symbols-outlined muted-icon" style="font-size:22px">search</span>
+      </button>
+      <button class="icon-ghost" onclick="toggleTheme()" aria-label="Theme">
+        <span class="material-symbols-outlined muted-icon" id="themeIcon" style="font-size:22px">dark_mode</span>
+      </button>
+    </div>
+  </header>
+
+  <div id="appBody">
+
+    <!-- HOME -->
+    <div class="tab-pane active" id="tab-home">
+      <div class="spinner-wrap" id="homeLoader">
+        <div class="spinner"></div>
+        <div class="spinner-label">Loading photos…</div>
+      </div>
+      <div id="homeFeed"></div>
+    </div>
+
+    <!-- NEW (latest) -->
+    <div class="tab-pane" id="tab-new">
+      <div id="newFeed"></div>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="tab-pane" id="tab-search">
+      <div class="search-wrap">
+        <div class="search-input-wrap">
+          <span class="material-symbols-outlined">search</span>
+          <input type="text" id="searchInput" placeholder="Search photos…" oninput="doSearch(this.value)" autocomplete="off">
+        </div>
+        <div class="search-grid" id="searchGrid"></div>
+        <div class="search-empty" id="searchEmpty" style="display:none">
+          <span class="material-symbols-outlined" style="font-size:40px;display:block;margin-bottom:12px;opacity:.25">search_off</span>
+          No results found.
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFILE -->
+    <div class="tab-pane" id="tab-profile">
+      <div class="profile-hero">
+        <div class="profile-av-ring">
+          <div class="profile-av" id="profileAv">A</div>
+        </div>
+        <div class="profile-name" id="profileName"></div>
+        <div class="profile-email" id="profileEmail"></div>
+        <div class="profile-stats">
+          <div class="pstat"><div class="pstat-val" id="statLiked">0</div><div class="pstat-lbl">Liked</div></div>
+          <div class="pstat"><div class="pstat-val" id="statSaved">0</div><div class="pstat-lbl">Saved</div></div>
+          <div class="pstat"><div class="pstat-val" id="statTotal">0</div><div class="pstat-lbl">Posts</div></div>
+        </div>
+      </div>
+
+      <div class="profile-row" onclick="toggleTheme()">
+        <div class="profile-row-left">
+          <span class="material-symbols-outlined" id="themeRowIcon">dark_mode</span>
+          <div><div class="profile-row-label">Dark Mode</div><div class="profile-row-sub">Switch appearance</div></div>
+        </div>
+        <div class="toggle-track" onclick="toggleTheme();event.stopPropagation()"><div class="toggle-thumb"></div></div>
+      </div>
+
+      <div class="profile-row" onclick="openChPw()">
+        <div class="profile-row-left">
+          <span class="material-symbols-outlined">lock_reset</span>
+          <div><div class="profile-row-label">Change Password</div><div class="profile-row-sub">Update your password</div></div>
+        </div>
+        <span class="material-symbols-outlined muted-icon" style="font-size:20px">chevron_right</span>
+      </div>
+
+      <div class="profile-tabs" style="margin-top:12px">
+        <div class="profile-tab active" id="ptab-btn-liked" onclick="switchProfileTab('liked',this)">
+          <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle;margin-right:4px">favorite</span>Liked
+        </div>
+        <div class="profile-tab" id="ptab-btn-saved" onclick="switchProfileTab('saved',this)">
+          <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle;margin-right:4px">bookmark</span>Saved
+        </div>
+      </div>
+
+      <div class="profile-tab-pane active" id="ptab-liked">
+        <div class="profile-grid" id="likedGrid"></div>
+        <div id="likedEmpty" style="text-align:center;padding:32px 20px;color:var(--on-surface-var);font-size:14px">No liked photos yet.</div>
+      </div>
+      <div class="profile-tab-pane" id="ptab-saved">
+        <div class="profile-grid" id="savedGrid"></div>
+        <div id="savedEmpty" style="text-align:center;padding:32px 20px;color:var(--on-surface-var);font-size:14px">No saved photos yet.</div>
+      </div>
+
+      <div class="profile-row" style="margin-top:8px" onclick="doLogout()">
+        <div class="profile-row-left">
+          <span class="material-symbols-outlined" style="color:#e11d48">logout</span>
+          <div class="profile-row-label" style="color:#e11d48">Sign Out</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /appBody -->
+
+  <nav id="bottomNav">
+    <button class="nav-btn active" id="nav-home" onclick="switchTab('home')" aria-label="Home">
+      <span class="material-symbols-outlined">home</span>
+    </button>
+    <button class="nav-btn" id="nav-new" onclick="switchTab('new')" aria-label="New">
+      <span class="material-symbols-outlined">local_fire_department</span>
+    </button>
+    <button class="nav-btn" id="nav-search" onclick="switchTab('search')" aria-label="Search">
+      <span class="material-symbols-outlined">search</span>
+    </button>
+    <button class="nav-btn" id="nav-profile" onclick="switchTab('profile')" aria-label="Profile">
+      <div class="nav-avatar" id="navAv">
+        <span class="material-symbols-outlined" style="font-size:18px">person</span>
+      </div>
+    </button>
+  </nav>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" onclick="closeLb()"><span class="material-symbols-outlined" style="font-size:22px;color:#fff">close</span></button>
+  <div class="lb-img-wrap">
+    <img id="lbImg" class="lb-img" src="" alt="" draggable="false" oncontextmenu="return false">
+  </div>
+  <div class="lb-cap" id="lbCap"></div>
+  <div class="lb-ctrls">
+    <button class="lb-btn" onclick="lbZ(-.3)"><span class="material-symbols-outlined" style="font-size:22px;color:#fff">zoom_out</span></button>
+    <button class="lb-btn" onclick="lbR()"><span class="material-symbols-outlined" style="font-size:22px;color:#fff">center_focus_strong</span></button>
+    <button class="lb-btn" onclick="lbZ(.3)"><span class="material-symbols-outlined" style="font-size:22px;color:#fff">zoom_in</span></button>
+  </div>
+</div>
+
+<!-- CHANGE PASSWORD SHEET -->
+<div class="sheet-backdrop" id="chpwSheet" onclick="if(event.target===this)closeChPw()">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <h2 style="font-size:17px;font-weight:700;color:var(--on-surface);margin-bottom:20px">Change Password</h2>
+    <div class="chpw-err" id="chpwErr"></div>
+    <div class="chpw-ok"  id="chpwOk"></div>
+    <div class="fg"><label>Current Password</label><input type="password" id="cpCur" placeholder="Current password" autocomplete="current-password"></div>
+    <div class="fg"><label>New Password</label><input type="password" id="cpNew" placeholder="Min 6 characters" autocomplete="new-password"></div>
+    <div class="fg"><label>Confirm New Password</label><input type="password" id="cpCon" placeholder="Repeat new password" autocomplete="new-password"></div>
+    <button class="btn-fill" onclick="doChPw()">Update Password</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <span class="material-symbols-outlined" id="toastIco" style="font-size:18px;font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24">check_circle</span>
+  <span id="toastMsg"></span>
+</div>
+
+<script>
+// ════════════════════════════════════════════════════════
+//  ★  SET YOUR INFINITYFREE API URL HERE  ★
+// ════════════════════════════════════════════════════════
+const API_URL = 'https://appexl.10001mb.com/api.php';
+//  Example: 'https://myaisha.infinityfreeapp.com/api.php'
+// ════════════════════════════════════════════════════════
+
+// ── State ────────────────────────────────────────────────
+let token    = localStorage.getItem('aisha_token') || '';
+let user     = JSON.parse(localStorage.getItem('aisha_user') || 'null');
+let photos   = [];
+let lbScale  = 1, toastT;
+
+// ── Boot ─────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  applyTheme(localStorage.getItem('xcl_theme') || 'light');
+
+  // Check if API_URL is still default
+  if (API_URL.includes('YOUR-SITE')) {
+    document.getElementById('configNotice').style.display = 'block';
+  }
+
+  if (token && user) {
+    // Verify token is still valid
+    api('status', {}).then(d => {
+      if (d.ok) { bootApp(d.user); }
+      else      { clearAuth(); }
+    }).catch(() => {
+      // Offline — use cached data
+      if (user) bootApp(user);
+    });
+  }
+
+  document.addEventListener('contextmenu', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
+  document.getElementById('lightbox').addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+
+  // Pinch zoom
+  const lb = document.getElementById('lightbox'); let d0 = 0;
+  lb.addEventListener('touchstart', e => { if (e.touches.length === 2) d0 = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY); });
+  lb.addEventListener('touchmove', e => {
+    if (e.touches.length === 2) {
+      e.preventDefault();
+      const d = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+      lbScale = Math.min(5, Math.max(.4, lbScale * (d / d0))); d0 = d;
+      document.getElementById('lbImg').style.transform = `scale(${lbScale})`;
     }
-  </style>
-<link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&amp;display=swap" rel="stylesheet"/></head>
-<body class="bg-surface text-on-surface antialiased">
-<!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant flex items-center px-edge-margin h-14 w-full justify-center">
-<div class="flex items-center gap-sm transition-transform active:scale-95">
-<span class="text-primary" style="font-family: 'Grand Hotel', cursive; font-size: 28px; font-weight: 400; line-height: 1;">Aisha</span>
-</div>
-</header>
-<!-- Main Content Canvas -->
-<main class="pt-14 pb-16 min-h-screen">
-<!-- Stories Section (Optional but adds to Feed high-end feel) -->
-<!-- Feed List -->
-<div class="flex flex-col">
-<!-- Feed Item 1 -->
-<article class="bg-surface border-b border-outline-variant pb-md">
-<header class="flex items-center px-edge-margin py-md justify-between w-full">
-<div class="flex items-center gap-sm">
-<img class="w-8 h-8 rounded-full object-cover" data-alt="Circular avatar of a female user with a minimalist aesthetic, shot in high-contrast lighting. The background is a clean, neutral gray, highlighting the subject's features in a sophisticated digital-native style. The image is crisp and professional, fitting into a luxury minimalist UI ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY0J1q4NbIRFoM_-Si1T8KgvGDiClhB2B2XftbvJCjZt3EtObiGWVoeFEE10rDhQeTIDfH2EZ21OzuQ-ZqGW-Txb9JMYEDtk7FsVOwu0L1b_PqENUpbDX45rlwrZwya4zaX5ATlyhyHdjty-zMAg5AdnOKHLlOdc7_MnLnRtcHlMz5lfPtzI_5ZDZQQWnhMQi1bF83suw4KHMQ69lOQTak9X3Tr9ci_VAcg_mhldvhVHU-tYvjsezV_wm1Tcmnhte7feGJ6wrc3pM"/>
-<span class="font-label-bold text-label-bold">elena_creative</span>
-</div>
-<button class="active:scale-95 transition-transform"><span class="material-symbols-outlined text-on-surface-variant" data-icon="more_horiz">more_horiz</span></button>
-</header>
-<div class="w-full aspect-square bg-surface-container overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="A breathtaking minimalist architectural detail showing a spiral concrete staircase in a sun-drenched gallery. The image features high-contrast shadows and bright highlights, creating a sense of depth and invisible sophistication. The lighting is dramatic yet clean, following the brand's professional gallery aesthetic with a monochromatic focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY89QxtXGHxF84d-fGXwftQ7iL9yOgDen8BTAhnNORAut_kTS5pMDoVZ3qPk4mhPMduKgEfyAGVfWjmePkUjjpcTXvArgFK34h6lwnNBXpSwRfaljJ3R09HxRnhHvOY9aU0bJSqLhWjeMOD2ooMiROl7G5VH-xH4lYLILQ_YFbuiB1F0tjiZb01lEoX8xkgoTcgn8gqgddDL1poyiew4I19zBg8NioIDDHqC81Fqdi319JTKANz1KXECwZH7oOrOpC563ajnkMIQ0"/>
-</div>
-<div class="px-edge-margin pt-md">
-<div class="flex items-center mb-sm gap-sm">
-<button class="active:scale-90 transition-transform"><span class="material-symbols-outlined text-primary" data-icon="favorite">favorite</span></button>
-<button class="active:scale-90 transition-transform"><span class="material-symbols-outlined text-on-surface-variant" data-icon="send">send</span></button>
-<div class="flex-grow"></div>
-<button class="active:scale-90 transition-transform"><span class="material-symbols-outlined text-on-surface-variant" data-icon="bookmark">bookmark</span></button>
-</div>
-<div class="mb-xs">
-<p class="font-label-bold text-label-bold">Liked by <span class="text-primary">marcus_v</span> and <span class="text-primary">1,240 others</span></p>
-</div>
-<div class="flex flex-col gap-xs">
-<p class="font-body-md text-body-md">
-<span class="font-label-bold mr-unit">elena_creative</span>
-                            Finding rhythm in concrete. Minimalist perspective for the new series. #vision #architecture
-                        </p>
-</div>
-</div>
-</article>
-<!-- Feed Item 2 -->
-<article class="bg-surface border-b border-outline-variant pb-md">
-<header class="flex items-center px-edge-margin py-md justify-between w-full">
-<div class="flex items-center gap-sm">
-<img class="w-8 h-8 rounded-full object-cover" data-alt="Circular profile photo of a male artist in a minimalist white studio. The lighting is high-key and soft, creating a bright and clean aesthetic. The subject wears a simple black shirt, embodying the high-contrast professional design style of the Vision application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2oWQLq-vjnjiOuOQ9iTULuK64JWpS4DQfLcvcfRUIY1SZpIjs9Bu5vrvMr1u8Ji7JtvSHz9Vv2XO-Z_GyW_2dA992xlilCS9IsGv8tA060nyFp_uprrVw9AAh4FoiM0xLhV3goduetFJ193sZgr8qwJT-6EAeKiFbf8BaM3vhqpaI7bmYr8yf5O5sVBtZP7R848drksG6cEW-ydHrGaXjSm2dGYm38dKh58zIFkn-c0PAP0K0nA38w-7x0NCl73HQVQL9cP0MVjw"/>
-<span class="font-label-bold text-label-bold">urban_void</span>
-</div>
-<button class="active:scale-95 transition-transform"><span class="material-symbols-outlined text-on-surface-variant" data-icon="more_horiz">more_horiz</span></button>
-</header>
-<div class="w-full aspect-square bg-surface-container overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="A sophisticated digital photography of a single chair placed in a vast, empty minimalist room with white walls and a polished concrete floor. Deep shadows and bright highlights emphasize the object's form. The scene feels premium and gallery-like, with a high-contrast aesthetic that puts the content at the center of the experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx2UtDNzzYIVdlDU_L0pAIJuwBMuXBzTeUvDrNAtREyFM1rZ6A9XlzxKAQ5D9Xu1t76oFZCoyFMaXI4xv0EYbbWrGgq4QzwOGuxisOAc_f2UtD2xrDEflXdzUAKh6bKYiMcndkVcdVLiVoI4BNoSKI4cBUxNnAawbiOPwPv-c2cuqRuT1_4_PBQmncPtGE-FMZe1A1KpyohJ08Vnb4U6-ZJBcz2MwWVVyr03FXJiOMCJ4jwOJeQZ_Tn2qsnzop-1eaPKiKt0SZYcU"/>
-</div>
-<div class="px-edge-margin pt-md">
-<div class="flex items-center mb-sm gap-sm">
-<button class="active:scale-90 transition-transform"><span class="material-symbols-outlined text-on-surface-variant" data-icon="favorite">favorite</span></button>
-<button class="active:scale-90 transition-transform"><span class="material-symbols-outlined text-on-surface-variant" data-icon="send">send</span></button>
-<div class="flex-grow"></div>
-<button class="active:scale-90 transition-transform"><span class="material-symbols-outlined text-on-surface-variant" data-icon="bookmark">bookmark</span></button>
-</div>
-<div class="mb-xs">
-<p class="font-label-bold text-label-bold">Liked by <span class="text-primary">elena_creative</span> and <span class="text-primary">892 others</span></p>
-</div>
-<div class="flex flex-col gap-xs">
-<p class="font-body-md text-body-md">
-<span class="font-label-bold mr-unit">urban_void</span>
-                            Space and silence. Exploring the beauty of nothingness.
-                        </p>
-</div>
-</div>
-</article>
-</div>
-</main>
-<!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-xl bg-surface border-t border-outline-variant z-50">
-<!-- Active Tab: Home -->
-<button class="flex flex-col items-center justify-center text-primary scale-110 active:scale-90 transition-transform duration-200 hover:bg-surface-container">
-<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
-</button>
-<!-- Inactive Tab: Search -->
-<button class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-transform duration-200 hover:bg-surface-container">
-<span class="material-symbols-outlined" data-icon="search">search</span>
-</button>
-<!-- Inactive Tab: Create -->
-<button class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-transform duration-200 hover:bg-surface-container"><span class="material-symbols-outlined" data-icon="local_fire_department">local_fire_department</span></button>
-<!-- Inactive Tab: Profile -->
-<button class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-transform duration-200 hover:bg-surface-container">
-<div class="w-6 h-6 rounded-full border border-outline-variant overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="Miniature circular avatar for navigation bar representing the user's profile. Minimalist and professional style consistent with the app's clean identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfXBTIiiGeYj-JJQ6MLQr0yEbV3QyFeDupkF8DSgnkoGtxoe9RyArD-qF0DMxDrOcdoU9_LZnwapWvyVeZrpMNFApJ649wLuXM4lVLN_hYGs85X9cmY9p5zRsfIDQXGiolDO-xvmFYw4S-vEfE50SDLBkN-GBm_LnEfByROl2iqtiJonfKrHPJGcsudhVI7tqRskUWkN2_uXuEmXpqZ4edRS-r-BorZOrt8bw5yb2-n-9ISWsHNMlKotCqVounMTLVz9YXxWBWeZw"/>
-</div>
-</button>
-</nav>
-</body></html>
+  }, { passive: false });
+});
+
+// ── API helper ────────────────────────────────────────────
+function api(action, data = {}) {
+  const body = new URLSearchParams({ action, token, ...data });
+  return fetch(API_URL, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body })
+    .then(r => r.json());
+}
+
+// ── Auth storage ─────────────────────────────────────────
+function saveAuth(t, u) {
+  token = t; user = u;
+  localStorage.setItem('aisha_token', t);
+  localStorage.setItem('aisha_user', JSON.stringify(u));
+}
+function clearAuth() {
+  token = ''; user = null;
+  localStorage.removeItem('aisha_token');
+  localStorage.removeItem('aisha_user');
+  showLogin();
+}
+
+// ── Login/Signup forms ────────────────────────────────────
+function swTab(t) {
+  document.getElementById('formIn').style.display = t === 'in' ? 'block' : 'none';
+  document.getElementById('formUp').style.display = t === 'up' ? 'block' : 'none';
+  document.getElementById('atab-in').classList.toggle('active', t === 'in');
+  document.getElementById('atab-up').classList.toggle('active', t === 'up');
+  document.getElementById('loginErr').style.display = 'none';
+}
+function showLoginErr(m) { const e = document.getElementById('loginErr'); e.textContent = m; e.style.display = 'block'; }
+
+function setLoading(btnId, loading) {
+  const btn = document.getElementById(btnId);
+  btn.disabled = loading;
+  btn.textContent = loading ? 'Please wait…' : (btnId === 'signinBtn' ? 'Sign in' : 'Create account');
+}
+
+function doSignIn() {
+  const email = document.getElementById('siEmail').value.trim();
+  const pass  = document.getElementById('siPass').value;
+  if (!email || !pass) { showLoginErr('Please fill all fields.'); return; }
+  setLoading('signinBtn', true);
+  api('login', { email, password: pass }).then(d => {
+    setLoading('signinBtn', false);
+    if (d.ok) { saveAuth(d.token, d.user); bootApp(d.user); }
+    else showLoginErr(d.msg);
+  }).catch(() => { setLoading('signinBtn', false); showLoginErr('Connection failed. Check your network.'); });
+}
+
+function doSignUp() {
+  const username = document.getElementById('suUser').value.trim();
+  const email    = document.getElementById('suEmail').value.trim();
+  const pass     = document.getElementById('suPass').value;
+  if (!username || !email || !pass) { showLoginErr('Please fill all fields.'); return; }
+  setLoading('signupBtn', true);
+  api('signup', { username, email, password: pass }).then(d => {
+    setLoading('signupBtn', false);
+    if (d.ok) { saveAuth(d.token, d.user); bootApp(d.user); showToast('celebration', 'Welcome, ' + d.user.username + '!'); }
+    else showLoginErr(d.msg);
+  }).catch(() => { setLoading('signupBtn', false); showLoginErr('Connection failed. Check your network.'); });
+}
+
+function doLogout() {
+  api('logout').finally(() => { clearAuth(); });
+}
+
+// ── Boot main app ─────────────────────────────────────────
+function bootApp(u) {
+  user = u;
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('shell').style.display = 'flex';
+  updateProfileUI(u);
+  loadPhotos();
+}
+
+function showLogin() {
+  document.getElementById('loginScreen').style.display = 'flex';
+  document.getElementById('shell').style.display = 'none';
+}
+
+function updateProfileUI(u) {
+  document.getElementById('profileAv').textContent    = u.username[0].toUpperCase();
+  document.getElementById('profileName').textContent  = u.username;
+  document.getElementById('profileEmail').textContent = u.email;
+  document.getElementById('statLiked').textContent    = (u.likes || []).length;
+  document.getElementById('statSaved').textContent    = (u.saved || []).length;
+  const navAv = document.getElementById('navAv');
+  navAv.innerHTML = `<span style="font-size:12px;font-weight:700">${u.username[0].toUpperCase()}</span>`;
+}
+
+// ── Load photos ───────────────────────────────────────────
+function loadPhotos() {
+  api('photos').then(d => {
+    if (!d.ok) { showToast('error', d.msg || 'Failed to load photos'); return; }
+    photos = d.photos || [];
+    user   = d.user;
+    updateProfileUI(user);
+    document.getElementById('statTotal').textContent = photos.length;
+    renderFeeds();
+    document.getElementById('homeLoader').style.display = 'none';
+  }).catch(() => {
+    document.getElementById('homeLoader').innerHTML = '<div style="text-align:center;padding:40px;color:var(--on-surface-var);font-size:14px">⚠️ Could not load photos.<br>Check your connection.</div>';
+  });
+}
+
+function renderFeeds() {
+  const likes = user.likes || [];
+  const saved = user.saved || [];
+
+  // Shuffle for home
+  const shuffled = [...photos].sort(() => Math.random() - .5);
+  const home = shuffled.slice(0, 12);
+  const newPhotos = [...photos].reverse();
+
+  document.getElementById('homeFeed').innerHTML   = home.length     ? home.map(p => cardHTML(p, likes, saved)).join('') : emptyHTML('photo_camera','No photos yet.');
+  document.getElementById('newFeed').innerHTML    = newPhotos.length ? '<div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--on-surface-var);padding:16px 14px 8px;display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:3px;height:13px;border-radius:2px;background:var(--grad)"></span>Latest uploads</div>' + newPhotos.map(p => cardHTML(p, likes, saved)).join('') : emptyHTML('local_fire_department','Nothing new yet.');
+
+  // Search grid
+  document.getElementById('searchGrid').innerHTML = photos.map(p => `
+    <div class="s-thumb" data-title="${(p.caption||p.title||'').toLowerCase()}" data-id="${p.id}" onclick="openLb('${p.id}')">
+      <img src="${p.url}" alt="" loading="lazy" oncontextmenu="return false">
+    </div>`).join('');
+
+  // Profile grids
+  const likedPhotos = photos.filter(p => likes.includes(p.id));
+  const savedPhotos = photos.filter(p => saved.includes(p.id));
+  renderProfileGrid('liked', likedPhotos);
+  renderProfileGrid('saved', savedPhotos);
+}
+
+function emptyHTML(icon, text) {
+  return `<div class="empty-feed"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 48">${icon}</span><p>${text}</p></div>`;
+}
+
+function cardHTML(p, likes, saved) {
+  const isL  = likes.includes(p.id);
+  const isS  = saved.includes(p.id);
+  const lFill = isL ? "'FILL' 1" : "'FILL' 0";
+  const sFill = isS ? "'FILL' 1" : "'FILL' 0";
+  const lCol  = isL ? 'icon-active' : '';
+  const sCol  = isS ? 'icon-active' : '';
+  const cnt   = p.likes || 0;
+  return `
+  <article class="post-card" data-id="${p.id}">
+    <header class="post-hdr">
+      <div class="post-creator">
+        <div class="creator-ring"><div class="creator-av">A</div></div>
+        <div>
+          <span class="creator-name">draft_aisha</span>
+          <span class="creator-time">${p.added || ''}</span>
+        </div>
+      </div>
+      <button class="icon-ghost" aria-label="Share" onclick="handleShare('${p.id}')">
+        <span class="material-symbols-outlined muted-icon" style="font-size:20px">more_horiz</span>
+      </button>
+    </header>
+    <div class="img-wrap" onclick="openLb('${p.id}')">
+      <img src="${p.url}" alt="${p.title}" loading="lazy" oncontextmenu="return false">
+    </div>
+    <div class="post-body">
+      <div class="post-actions">
+        <button class="icon-ghost like-btn ${lCol}" data-id="${p.id}" onclick="handleLike(this)">
+          <span class="material-symbols-outlined like-icon" style="font-variation-settings:${lFill},'wght' 400,'GRAD' 0,'opsz' 24">favorite</span>
+        </button>
+        <span class="like-count">${cnt}</span>
+        <button class="icon-ghost" onclick="handleShare('${p.id}')" aria-label="Share">
+          <span class="material-symbols-outlined muted-icon" style="font-size:22px">send</span>
+        </button>
+        <div style="flex:1"></div>
+        <button class="icon-ghost" onclick="openLb('${p.id}')"><span class="material-symbols-outlined muted-icon" style="font-size:22px">open_in_full</span></button>
+        <button class="icon-ghost save-btn ${sCol}" data-id="${p.id}" onclick="handleSave(this)">
+          <span class="material-symbols-outlined save-icon" style="font-variation-settings:${sFill},'wght' 400,'GRAD' 0,'opsz' 24">bookmark</span>
+        </button>
+      </div>
+      <p class="like-line">${cnt > 0 ? `Liked by <b>${cnt} ${cnt === 1 ? 'person' : 'others'}</b>` : 'Be the first to like this'}</p>
+      ${p.caption ? `<p class="caption"><b>aisha</b> ${p.caption}</p>` : ''}
+    </div>
+  </article>`;
+}
+
+function renderProfileGrid(type, list) {
+  const grid  = document.getElementById(type + 'Grid');
+  const empty = document.getElementById(type + 'Empty');
+  if (list.length === 0) {
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+  } else {
+    empty.style.display = 'none';
+    grid.innerHTML = list.map(p => `
+      <div class="pf-thumb" onclick="openLb('${p.id}')">
+        <img src="${p.url}" alt="" loading="lazy" oncontextmenu="return false">
+      </div>`).join('');
+  }
+}
+
+// ── Like ─────────────────────────────────────────────────
+function handleLike(btn) {
+  const id = btn.dataset.id;
+  api('like', { photo_id: id }).then(d => {
+    if (!d.ok) { showToast('error', d.msg || 'Error'); return; }
+    const liked = d.action === 'liked';
+    user.likes = d.likes;
+    localStorage.setItem('aisha_user', JSON.stringify(user));
+
+    document.querySelectorAll(`.like-btn[data-id="${id}"]`).forEach(b => {
+      const ico = b.querySelector('.like-icon');
+      if (ico) ico.style.fontVariationSettings = liked ? "'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24" : "'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24";
+      b.classList.toggle('icon-active', liked);
+      const cnt = b.nextElementSibling;
+      if (cnt?.classList.contains('like-count'))
+        cnt.textContent = Math.max(0, parseInt(cnt.textContent || 0) + (liked ? 1 : -1));
+    });
+
+    const ph = photos.find(p => p.id === id);
+    if (ph) ph.likes = Math.max(0, ph.likes + (liked ? 1 : -1));
+
+    document.getElementById('statLiked').textContent = user.likes.length;
+    renderProfileGrid('liked', photos.filter(p => user.likes.includes(p.id)));
+    showToast(liked ? 'favorite' : 'heart_broken', liked ? 'Liked!' : 'Like removed');
+  });
+}
+
+// ── Save ─────────────────────────────────────────────────
+function handleSave(btn) {
+  const id = btn.dataset.id;
+  api('save', { photo_id: id }).then(d => {
+    if (!d.ok) { showToast('error', d.msg || 'Error'); return; }
+    const saved = d.action === 'saved';
+    user.saved = d.saved;
+    localStorage.setItem('aisha_user', JSON.stringify(user));
+
+    document.querySelectorAll(`.save-btn[data-id="${id}"]`).forEach(b => {
+      const ico = b.querySelector('.save-icon');
+      if (ico) ico.style.fontVariationSettings = saved ? "'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24" : "'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24";
+      b.classList.toggle('icon-active', saved);
+    });
+
+    document.getElementById('statSaved').textContent = user.saved.length;
+    renderProfileGrid('saved', photos.filter(p => user.saved.includes(p.id)));
+    showToast(saved ? 'bookmark' : 'bookmark_remove', saved ? 'Saved!' : 'Removed from saved');
+  });
+}
+
+// ── Lightbox ──────────────────────────────────────────────
+function openLb(id) {
+  const p = photos.find(x => x.id === id); if (!p) return;
+  document.getElementById('lbImg').src = p.url;
+  document.getElementById('lbCap').textContent = p.caption || p.title || '';
+  lbScale = 1; document.getElementById('lbImg').style.transform = 'scale(1)';
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLb() { document.getElementById('lightbox').classList.remove('open'); }
+function lbZ(d)    { lbScale = Math.min(5, Math.max(.4, lbScale + d)); document.getElementById('lbImg').style.transform = `scale(${lbScale})`; }
+function lbR()     { lbScale = 1; document.getElementById('lbImg').style.transform = 'scale(1)'; }
+
+// ── Tabs ─────────────────────────────────────────────────
+function switchTab(name) {
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(n => n.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  document.getElementById('nav-' + name).classList.add('active');
+  document.getElementById('appBody').scrollTop = 0;
+  if (name === 'search') setTimeout(() => document.getElementById('searchInput')?.focus(), 150);
+}
+function switchProfileTab(name, el) {
+  document.querySelectorAll('.profile-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.profile-tab-pane').forEach(p => p.classList.remove('active'));
+  if (el) el.classList.add('active');
+  document.getElementById('ptab-' + name)?.classList.add('active');
+}
+
+// ── Search ────────────────────────────────────────────────
+function doSearch(q) {
+  q = q.toLowerCase().trim(); let shown = 0;
+  document.querySelectorAll('.s-thumb').forEach(t => {
+    const m = !q || t.dataset.title.includes(q);
+    t.style.display = m ? '' : 'none'; if (m) shown++;
+  });
+  document.getElementById('searchEmpty').style.display = shown === 0 ? 'block' : 'none';
+}
+
+// ── Share ─────────────────────────────────────────────────
+function handleShare(id) {
+  const p = photos.find(x => x.id === id);
+  const data = { title: p?.title || 'Aisha', text: p?.caption || '', url: window.location.href };
+  if (navigator.share) navigator.share(data).catch(() => copyURL());
+  else copyURL();
+  function copyURL() {
+    if (navigator.clipboard?.writeText) navigator.clipboard.writeText(window.location.href).then(() => showToast('content_copy','Link copied!'));
+  }
+}
+
+// ── Change password ───────────────────────────────────────
+function openChPw()  { document.getElementById('chpwSheet').classList.add('open'); }
+function closeChPw() { document.getElementById('chpwSheet').classList.remove('open'); }
+function doChPw() {
+  const cur = document.getElementById('cpCur').value;
+  const nw  = document.getElementById('cpNew').value;
+  const con = document.getElementById('cpCon').value;
+  const err = document.getElementById('chpwErr'), ok = document.getElementById('chpwOk');
+  err.style.display = 'none'; ok.style.display = 'none';
+  if (!cur || !nw || !con) { err.textContent = 'Fill all fields.'; err.style.display = 'block'; return; }
+  if (nw !== con)          { err.textContent = 'Passwords do not match.'; err.style.display = 'block'; return; }
+  if (nw.length < 6)       { err.textContent = 'Min 6 characters.'; err.style.display = 'block'; return; }
+  api('change_password', { current: cur, new: nw }).then(d => {
+    if (d.ok) {
+      ok.textContent = 'Password updated!'; ok.style.display = 'block';
+      ['cpCur','cpNew','cpCon'].forEach(id => document.getElementById(id).value = '');
+      setTimeout(() => { closeChPw(); showToast('check_circle','Password updated!'); }, 1200);
+    } else { err.textContent = d.msg; err.style.display = 'block'; }
+  });
+}
+
+// ── Theme ─────────────────────────────────────────────────
+function applyTheme(t) {
+  document.documentElement.className = t;
+  localStorage.setItem('xcl_theme', t);
+  ['themeIcon','themeRowIcon'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = t === 'dark' ? 'light_mode' : 'dark_mode';
+  });
+}
+function toggleTheme() {
+  applyTheme(document.documentElement.className === 'dark' ? 'light' : 'dark');
+}
+
+// ── Toast ─────────────────────────────────────────────────
+function showToast(icon, msg) {
+  const t = document.getElementById('toast');
+  document.getElementById('toastIco').textContent = icon;
+  document.getElementById('toastMsg').textContent = msg;
+  t.classList.add('show'); clearTimeout(toastT);
+  toastT = setTimeout(() => t.classList.remove('show'), 2800);
+}
+</script>
+</body>
+</html>
