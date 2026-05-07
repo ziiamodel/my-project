@@ -482,8 +482,9 @@ button,.icon-ghost,.nav-btn,.lb-btn,.lb-close { pointer-events:auto; }
 // ════════════════════════════════════════════════════════
 //  ★  SET YOUR INFINITYFREE API URL HERE  ★
 // ════════════════════════════════════════════════════════
-const API_URL = 'https://appexl.10001mb.com/api.php';
-//  Example: 'https://myaisha.infinityfreeapp.com/api.php'
+const API_URL = '/api/api.php';
+//  The Netlify proxy forwards /api/* → https://appexl.10001mb.com/*
+//  No CORS needed — browser always calls same-origin /api/api.php
 // ════════════════════════════════════════════════════════
 
 // ── State ────────────────────────────────────────────────
@@ -496,10 +497,7 @@ let lbScale  = 1, toastT;
 document.addEventListener('DOMContentLoaded', () => {
   applyTheme(localStorage.getItem('xcl_theme') || 'light');
 
-  // Check if API_URL is still default
-  if (API_URL.includes('YOUR-SITE')) {
-    document.getElementById('configNotice').style.display = 'block';
-  }
+  // Config notice no longer needed — proxy handles routing
 
   if (token && user) {
     // Verify token is still valid
