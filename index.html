@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "outline": "#7e7576",
+                    "surface-variant": "#e2e2e2",
+                    "on-primary-fixed-variant": "#474747",
+                    "surface-container-low": "#f3f3f3",
+                    "on-primary-container": "#848484",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "surface": "#f9f9f9",
+                    "on-surface-variant": "#4c4546",
+                    "tertiary-container": "#1b1b1b",
+                    "background": "#f9f9f9",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#e3e2e2",
+                    "secondary": "#5e5e5e",
+                    "tertiary": "#000000",
+                    "on-secondary-container": "#646464",
+                    "surface-bright": "#f9f9f9",
+                    "secondary-container": "#e3e2e2",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#848484",
+                    "on-primary-fixed": "#1b1b1b",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#1b1b1b",
+                    "on-secondary-fixed-variant": "#464747",
+                    "surface-container": "#eeeeee",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-secondary": "#ffffff",
+                    "primary": "#000000",
+                    "outline-variant": "#cfc4c5",
+                    "inverse-primary": "#c6c6c6",
+                    "tertiary-fixed": "#e2e2e2",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#1b1b1b",
+                    "on-surface": "#1b1b1b",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-dim": "#dadada",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "inverse-on-surface": "#f1f1f1",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#c7c6c6",
+                    "inverse-surface": "#303030",
+                    "on-background": "#1b1b1b",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "surface-tint": "#5e5e5e",
+                    "primary-fixed": "#e2e2e2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "edge-margin": "12px",
+                    "xl": "24px",
+                    "lg": "16px",
+                    "unit": "4px",
+                    "md": "12px",
+                    "xs": "4px",
+                    "grid-gutter": "2px",
+                    "sm": "8px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "label-bold": ["Inter"],
+                    "display-bold": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-sm": ["16px", {"lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "label-caps": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "label-bold": ["14px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "600"}],
+                    "display-bold": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&amp;display=swap" rel="stylesheet"/></head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant flex items-center px-edge-margin h-14 w-full justify-center">
+<div class="flex items-center gap-sm transition-transform active:scale-95">
+<span class="text-primary" style="font-family: 'Grand Hotel', cursive; font-size: 28px; font-weight: 400; line-height: 1;">Aisha</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-14 pb-16 min-h-screen">
+<!-- Stories Section (Optional but adds to Feed high-end feel) -->
+<!-- Feed List -->
+<div class="flex flex-col">
+<!-- Feed Item 1 -->
+<article class="bg-surface border-b border-outline-variant pb-md">
+<header class="flex items-center px-edge-margin py-md justify-between w-full">
+<div class="flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Circular avatar of a female user with a minimalist aesthetic, shot in high-contrast lighting. The background is a clean, neutral gray, highlighting the subject's features in a sophisticated digital-native style. The image is crisp and professional, fitting into a luxury minimalist UI ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY0J1q4NbIRFoM_-Si1T8KgvGDiClhB2B2XftbvJCjZt3EtObiGWVoeFEE10rDhQeTIDfH2EZ21OzuQ-ZqGW-Txb9JMYEDtk7FsVOwu0L1b_PqENUpbDX45rlwrZwya4zaX5ATlyhyHdjty-zMAg5AdnOKHLlOdc7_MnLnRtcHlMz5lfPtzI_5ZDZQQWnhMQi1bF83suw4KHMQ69lOQTak9X3Tr9ci_VAcg_mhldvhVHU-tYvjsezV_wm1Tcmnhte7feGJ6wrc3pM"/>
+<span class="font-label-bold text-label-bold">elena_creative</span>
+</div>
+<button class="active:scale-95 transition-transform"><span class="material-symbols-outlined text-on-surface-variant" data-icon="more_horiz">more_horiz</span></button>
+</header>
+<div class="w-full aspect-square bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A breathtaking minimalist architectural detail showing a spiral concrete staircase in a sun-drenched gallery. The image features high-contrast shadows and bright highlights, creating a sense of depth and invisible sophistication. The lighting is dramatic yet clean, following the brand's professional gallery aesthetic with a monochromatic focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY89QxtXGHxF84d-fGXwftQ7iL9yOgDen8BTAhnNORAut_kTS5pMDoVZ3qPk4mhPMduKgEfyAGVfWjmePkUjjpcTXvArgFK34h6lwnNBXpSwRfaljJ3R09HxRnhHvOY9aU0bJSqLhWjeMOD2ooMiROl7G5VH-xH4lYLILQ_YFbuiB1F0tjiZb01lEoX8xkgoTcgn8gqgddDL1poyiew4I19zBg8NioIDDHqC81Fqdi319JTKANz1KXECwZH7oOrOpC563ajnkMIQ0"/>
+</div>
+<div class="px-edge-margin pt-md">
+<div class="flex items-center mb-sm gap-sm">
+<button class="active:scale-90 transition-transform"><span class="material-symbols-outlined text-primary" data-icon="favorite">favorite</span></button>
+<button class="active:scale-90 transition-transform"><span class="material-symbols-outlined text-on-surface-variant" data-icon="send">send</span></button>
+<div class="flex-grow"></div>
+<button class="active:scale-90 transition-transform"><span class="material-symbols-outlined text-on-surface-variant" data-icon="bookmark">bookmark</span></button>
+</div>
+<div class="mb-xs">
+<p class="font-label-bold text-label-bold">Liked by <span class="text-primary">marcus_v</span> and <span class="text-primary">1,240 others</span></p>
+</div>
+<div class="flex flex-col gap-xs">
+<p class="font-body-md text-body-md">
+<span class="font-label-bold mr-unit">elena_creative</span>
+                            Finding rhythm in concrete. Minimalist perspective for the new series. #vision #architecture
+                        </p>
+</div>
+</div>
+</article>
+<!-- Feed Item 2 -->
+<article class="bg-surface border-b border-outline-variant pb-md">
+<header class="flex items-center px-edge-margin py-md justify-between w-full">
+<div class="flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Circular profile photo of a male artist in a minimalist white studio. The lighting is high-key and soft, creating a bright and clean aesthetic. The subject wears a simple black shirt, embodying the high-contrast professional design style of the Vision application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2oWQLq-vjnjiOuOQ9iTULuK64JWpS4DQfLcvcfRUIY1SZpIjs9Bu5vrvMr1u8Ji7JtvSHz9Vv2XO-Z_GyW_2dA992xlilCS9IsGv8tA060nyFp_uprrVw9AAh4FoiM0xLhV3goduetFJ193sZgr8qwJT-6EAeKiFbf8BaM3vhqpaI7bmYr8yf5O5sVBtZP7R848drksG6cEW-ydHrGaXjSm2dGYm38dKh58zIFkn-c0PAP0K0nA38w-7x0NCl73HQVQL9cP0MVjw"/>
+<span class="font-label-bold text-label-bold">urban_void</span>
+</div>
+<button class="active:scale-95 transition-transform"><span class="material-symbols-outlined text-on-surface-variant" data-icon="more_horiz">more_horiz</span></button>
+</header>
+<div class="w-full aspect-square bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A sophisticated digital photography of a single chair placed in a vast, empty minimalist room with white walls and a polished concrete floor. Deep shadows and bright highlights emphasize the object's form. The scene feels premium and gallery-like, with a high-contrast aesthetic that puts the content at the center of the experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx2UtDNzzYIVdlDU_L0pAIJuwBMuXBzTeUvDrNAtREyFM1rZ6A9XlzxKAQ5D9Xu1t76oFZCoyFMaXI4xv0EYbbWrGgq4QzwOGuxisOAc_f2UtD2xrDEflXdzUAKh6bKYiMcndkVcdVLiVoI4BNoSKI4cBUxNnAawbiOPwPv-c2cuqRuT1_4_PBQmncPtGE-FMZe1A1KpyohJ08Vnb4U6-ZJBcz2MwWVVyr03FXJiOMCJ4jwOJeQZ_Tn2qsnzop-1eaPKiKt0SZYcU"/>
+</div>
+<div class="px-edge-margin pt-md">
+<div class="flex items-center mb-sm gap-sm">
+<button class="active:scale-90 transition-transform"><span class="material-symbols-outlined text-on-surface-variant" data-icon="favorite">favorite</span></button>
+<button class="active:scale-90 transition-transform"><span class="material-symbols-outlined text-on-surface-variant" data-icon="send">send</span></button>
+<div class="flex-grow"></div>
+<button class="active:scale-90 transition-transform"><span class="material-symbols-outlined text-on-surface-variant" data-icon="bookmark">bookmark</span></button>
+</div>
+<div class="mb-xs">
+<p class="font-label-bold text-label-bold">Liked by <span class="text-primary">elena_creative</span> and <span class="text-primary">892 others</span></p>
+</div>
+<div class="flex flex-col gap-xs">
+<p class="font-body-md text-body-md">
+<span class="font-label-bold mr-unit">urban_void</span>
+                            Space and silence. Exploring the beauty of nothingness.
+                        </p>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-xl bg-surface border-t border-outline-variant z-50">
+<!-- Active Tab: Home -->
+<button class="flex flex-col items-center justify-center text-primary scale-110 active:scale-90 transition-transform duration-200 hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+</button>
+<!-- Inactive Tab: Search -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-transform duration-200 hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<!-- Inactive Tab: Create -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-transform duration-200 hover:bg-surface-container"><span class="material-symbols-outlined" data-icon="local_fire_department">local_fire_department</span></button>
+<!-- Inactive Tab: Profile -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-transform duration-200 hover:bg-surface-container">
+<div class="w-6 h-6 rounded-full border border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Miniature circular avatar for navigation bar representing the user's profile. Minimalist and professional style consistent with the app's clean identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfXBTIiiGeYj-JJQ6MLQr0yEbV3QyFeDupkF8DSgnkoGtxoe9RyArD-qF0DMxDrOcdoU9_LZnwapWvyVeZrpMNFApJ649wLuXM4lVLN_hYGs85X9cmY9p5zRsfIDQXGiolDO-xvmFYw4S-vEfE50SDLBkN-GBm_LnEfByROl2iqtiJonfKrHPJGcsudhVI7tqRskUWkN2_uXuEmXpqZ4edRS-r-BorZOrt8bw5yb2-n-9ISWsHNMlKotCqVounMTLVz9YXxWBWeZw"/>
+</div>
+</button>
+</nav>
+</body></html>
